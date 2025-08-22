@@ -1,0 +1,17 @@
+# Arquivos do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv/
+.env/
+
+# Configurações locais
+*.sqlite3
+instance/
+
+# Tailwind build
+app/static/css/tailwind/output.css
+node_modules/
