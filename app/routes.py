@@ -13,3 +13,7 @@ def dashboard():
 def estoque():
     return render_template("estoque.html")
 
+@app.route("/produtos")
+def produtos():
+    return render_template("produtos.html")
+

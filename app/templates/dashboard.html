@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestão+</title>
     <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
+    <script>
+    (() => {
+      const storedTheme = localStorage.getItem("color-theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    })();
+    </script>
+    
   </head>
   <body class="bg-gray-50 dark:bg-gray-900">
     {% include 'sidebar.html' %}
@@ -98,7 +111,7 @@
         <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Últimas transações realizadas no sistema</p>
       
         <div class="space-y-4">
-          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border-2 border-green-200 dark:border-green-700">
             <div>
               <p class="font-semibold text-gray-800 dark:text-gray-200">João Silva</p>
               <p class="text-sm text-gray-500 dark:text-gray-400">Arroz Integral 5kg</p>
@@ -107,7 +120,7 @@
             <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300">Concluído</span>
           </div>
         
-          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border-2 border-green-200 dark:border-green-700">
             <div>
               <p class="font-semibold text-gray-800 dark:text-gray-200">Maria Santos</p>
               <p class="text-sm text-gray-500 dark:text-gray-400">Feijão Preto 1kg</p>
@@ -115,7 +128,7 @@
             </div>
             <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300">Concluído</span>
           </div>
-          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border-2 border-green-200 dark:border-green-700">
             <div>
               <p class="font-semibold text-gray-800 dark:text-gray-200">Maria Santos</p>
               <p class="text-sm text-gray-500 dark:text-gray-400">Feijão Preto 1kg</p>
@@ -138,7 +151,7 @@
       
         <div class="space-y-4">
           <!-- card produto estoque -->
-          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border border-orange-200 dark:border-yellow-600">
+          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border-2 border-orange-200 dark:border-yellow-600">
             <div class="flex justify-between items-center">
               <span class="font-semibold text-gray-800 dark:text-gray-200">Leite Integral 1L</span>
               <span class="text-yellow-400 dark:text-orange-400 font-bold">5 unidades</span>
@@ -156,7 +169,7 @@
           </div>
           <!-- card produto estoque -->
         
-          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border border-orange-200 dark:border-yellow-600">
+          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border-2 border-orange-200 dark:border-yellow-600">
             <div class="flex justify-between items-center">
               <span class="font-semibold text-gray-800 dark:text-gray-200">Pão de Forma Integral</span>
               <span class="text-yellow-400 dark:text-orange-400 font-bold">3 unidades</span>
@@ -178,6 +191,5 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-   
   </body>
 </html>
