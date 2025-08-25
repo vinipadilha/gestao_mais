@@ -6,7 +6,178 @@
     <title>Gestão+</title>
     <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-gray-50 dark:bg-gray-900">
+    {% include 'sidebar.html' %}
+
+    <!-- Conteúdo principal -->
+  <main class="p-10 sm:ml-64 pt-24">
+    <!-- Título do Dashboard -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+      <p class="text-gray-600 dark:text-gray-400">Visão geral do seu mercado - monitoramento em tempo real</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Receita Total -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Receita Total</h3>
+          <div class="p-3 bg-green-500 rounded-lg">
+            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 17.345a4.76 4.76 0 0 0 2.558 1.618c2.274.589 4.512-.446 4.999-2.31.487-1.866-1.273-3.9-3.546-4.49-2.273-.59-4.034-2.623-3.547-4.488.486-1.865 2.724-2.899 4.998-2.31.982.236 1.87.793 2.538 1.592m-3.879 12.171V21m0-18v2.2" />
+            </svg>
+          </div>
+        </div>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">R$ 35.000</p>
+        <div class="flex items-center justify-between mt-2">
+          <p class="text-sm text-gray-600 dark:text-gray-400">Últimos 30 dias</p>
+          <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+12.5%</span>
+        </div>
+      </div>
+
+      <!-- Produtos Cadastrados -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Produtos Cadastrados</h3>
+          <div class="p-3 bg-blue-500 rounded-lg">
+            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+            </svg>
+          </div>
+        </div>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">1.250</p>
+        <div class="flex items-center justify-between mt-2">
+          <p class="text-sm text-gray-600 dark:text-gray-400">Itens no sistema</p>
+          <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+8</span>
+        </div>
+      </div>
+
+      <!-- Vendas Hoje -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Vendas Hoje</h3>
+          <div class="p-3 bg-purple-500 rounded-lg">
+            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+            </svg>
+          </div>
+        </div>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">87</p>
+        <div class="flex items-center justify-between mt-2">
+          <p class="text-sm text-gray-600 dark:text-gray-400">Transações realizadas</p>
+          <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+23.1%</span>
+        </div>
+      </div>
+
+      <!-- Estoque Baixo -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Estoque Baixo</h3>
+          <div class="p-3 bg-yellow-500 rounded-lg">
+            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+            </svg>
+          </div>
+        </div>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">32</p>
+        <div class="flex items-center justify-between mt-2">
+          <p class="text-sm text-gray-600 dark:text-gray-400">Produtos precisam de reposição</p>
+          <span class="text-xs font-semibold px-2 py-1 bg-red-100 text-red-600 rounded-full">-5.2%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Listas abaixo dos cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <!-- Vendas Recentes -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+        <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">Vendas Recentes</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Últimas transações realizadas no sistema</p>
+      
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+            <div>
+              <p class="font-semibold text-gray-800 dark:text-gray-200">João Silva</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Arroz Integral 5kg</p>
+              <p class="text-green-600 dark:text-green-400 font-semibold">R$ 25,90</p>
+            </div>
+            <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300">Concluído</span>
+          </div>
+        
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+            <div>
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Maria Santos</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Feijão Preto 1kg</p>
+              <p class="text-green-600 dark:text-green-400 font-semibold">R$ 8,50</p>
+            </div>
+            <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300">Concluído</span>
+          </div>
+          <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/60 flex justify-between items-center border border-green-200 dark:border-green-700">
+            <div>
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Maria Santos</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Feijão Preto 1kg</p>
+              <p class="text-green-600 dark:text-green-400 font-semibold">R$ 8,50</p>
+            </div>
+            <span class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300">Concluído</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Estoque Baixo -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+        <div class="flex items-center gap-2 mb-1">
+          <svg class="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Estoque Baixo</h2>
+        </div>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Produtos que necessitam reposição urgente</p>
+      
+        <div class="space-y-4">
+          <!-- card produto estoque -->
+          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border border-orange-200 dark:border-yellow-600">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-800 dark:text-gray-200">Leite Integral 1L</span>
+              <span class="text-yellow-400 dark:text-orange-400 font-bold">5 unidades</span>
+            </div>
+          
+            <div class="flex justify-between items-center mt-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-50 text-gray-900 dark:bg-yellow-500/20 dark:text-yellow-300 border-2 border-gray-200 dark:border-yellow-500/20">Laticínios</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300">Atual: 5 | Mínimo: 10</span>
+              </div>
+              <div>
+                <span class="text-sm text-gray-500 dark:text-gray-300 font-semibold">Repor 5</span>
+              </div>
+            </div>
+          </div>
+          <!-- card produto estoque -->
+        
+          <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-600/30 border border-orange-200 dark:border-yellow-600">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-800 dark:text-gray-200">Pão de Forma Integral</span>
+              <span class="text-yellow-400 dark:text-orange-400 font-bold">3 unidades</span>
+            </div>
+          
+            <div class="flex justify-between items-center mt-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-50 text-gray-900 dark:bg-yellow-500/20 dark:text-yellow-300 border-2 border-gray-200 dark:border-yellow-500/20">Padaria</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300">Atual: 5 | Mínimo: 15</span>
+              </div>
+              <div>
+                <span class="text-sm text-gray-500 dark:text-gray-300 font-semibold">Repor 12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
    
   </body>
 </html>

@@ -1,4 +1,11 @@
 {
+  "name": "gestao_plus",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./app/static/css/tailwind/input.css -o ./app/static/css/tailwind/output.css",
+    "dev:css": "npx @tailwindcss/cli -i ./app/static/css/tailwind/input.css -o ./app/static/css/tailwind/output.css --watch"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
     "tailwindcss": "^4.1.12"
