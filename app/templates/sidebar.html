@@ -11,60 +11,38 @@
             </svg>
           </button>
           <a href="/" class="flex ms-2 md:me-24">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+            <img src="../static/images/logo.png" width="50px"> 
             <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Gestão+</span>
           </a>
         </div>
         <!-- Botões à direita -->
         <div class="flex items-center gap-3">
-          
-          <!-- Botão Dark/Light -->
-          <button id="theme-toggle" type="button" 
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 
-                   focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 
-                   rounded-lg text-sm p-2.5">
-
-            <!-- Ícone Dark -->
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z"></path>
-            </svg>
-          
-            <!-- Ícone Light -->
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M10 2a1 1 0 011 1v1a1 1 ..."></path>
-            </svg>
-          </button>
-
-                      <!-- Botão Usuário -->
-          <button data-modal-target="user-modal" data-modal-toggle="user-modal"
+                  
+          <button data-user-modal-open
             class="cursor-pointer flex items-center gap-2 text-sm dark:bg-gray-800 text-white px-3 py-2 rounded-full ring-4 ring-gray-300 focus:ring-gray-500 dark:ring-gray-600">
-
             <!-- Ícone -->
             <svg class="w-6 h-6 text-gray-200 dark:text-white text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
             </svg>
-          
-            <!-- Nome -->
             <span class="font-medium text-gray-500 dark:text-gray-200">User Teste</span>
           </button>
-
-
+          
           <!-- Modal Usuário -->
-          <div id="user-modal" tabindex="-1" aria-hidden="true"
-            class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-
-            <!-- Container do modal -->
+          <div id="user-modal" aria-hidden="true"
+            class="hidden fixed inset-0 z-50 flex items-center justify-center
+                   bg-black/60 transition-opacity duration-300 ease-out opacity-0">
+          
+            <!-- Conteúdo do modal -->
             <div id="user-modal-content"
-              class="relative w-full max-w-2xl bg-white rounded-lg shadow dark:bg-gray-800 
-                     transform transition-all duration-300 ease-out opacity-0 translate-y-8">
-
+                 class="relative w-full max-w-2xl bg-white rounded-lg shadow dark:bg-gray-800
+                        transform transition-all duration-300 ease-out
+                        opacity-0 translate-y-8">
+          
               <!-- Header -->
               <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                  Perfil do Usuário
-                </h3>
-                <button type="button" class="cursor-pointer text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-lg text-sm w-8 h-8 flex items-center justify-center" data-modal-toggle="user-modal">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Perfil do Usuário</h3>
+                <button type="button" data-user-modal-close
+                  class="cursor-pointer text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-lg text-sm w-8 h-8 flex items-center justify-center">
                   ✕
                 </button>
               </div>
@@ -75,12 +53,10 @@
                   <p class="text-sm text-gray-500 dark:text-gray-400">Nome</p>
                   <p class="text-lg font-medium text-gray-900 dark:text-white">User Teste</p>
                 </div>
-              
                 <div>
                   <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
                   <p class="text-lg font-medium text-gray-900 dark:text-white">teste@email.com</p>
                 </div>
-              
                 <div>
                   <p class="text-sm text-gray-500 dark:text-gray-400">Cargo</p>
                   <p class="text-lg font-medium text-gray-900 dark:text-white">Administrador</p>
@@ -100,12 +76,11 @@
             
               <!-- Footer -->
               <div class="flex justify-end gap-3 p-4 border-t dark:border-gray-700">
-                <button data-modal-toggle="user-modal" class="cursor-pointer px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
+                <button data-user-modal-close
+                  class="cursor-pointer px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
                   Fechar
                 </button>
-                <a href="/logout" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
-                  Logout
-                </a>
+                <a href="/logout" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Logout</a>
               </div>
             </div>
           </div>
@@ -191,27 +166,55 @@
   </aside>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("user-modal");
-    const modalContent = document.getElementById("user-modal-content");
 
-    document.querySelectorAll("[data-modal-toggle='user-modal']").forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (modal.classList.contains("hidden")) {
-          // Abrir
-          modal.classList.remove("hidden");
-          setTimeout(() => {
-            modalContent.classList.remove("opacity-0", "translate-y-8");
-            modalContent.classList.add("opacity-100", "translate-y-0");
-          }, 10);
-        } else {
-          // Fechar
-          modalContent.classList.remove("opacity-100", "translate-y-0");
-          modalContent.classList.add("opacity-0", "translate-y-8");
-          setTimeout(() => modal.classList.add("hidden"), 900); 
-        }
-      });
+<!-- Script: transição + abertura/fechamento, sem Flowbite -->
+<script>
+(function () {
+  const modal = document.getElementById('user-modal');
+  const content = document.getElementById('user-modal-content');
+  const openBtns = document.querySelectorAll('[data-user-modal-open]');
+  const closeBtns = document.querySelectorAll('[data-user-modal-close]');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    // Acessibilidade
+    modal.setAttribute('aria-hidden', 'false');
+
+    // Próximo frame para permitir transição (display -> opacity)
+    requestAnimationFrame(() => {
+      modal.classList.remove('opacity-0');
+      modal.classList.add('opacity-100');
+
+      content.classList.remove('opacity-0', 'translate-y-8');
+      content.classList.add('opacity-100', 'translate-y-0');
     });
+  }
+
+  function closeModal() {
+    modal.classList.add('opacity-0');
+    modal.classList.remove('opacity-100');
+
+    content.classList.add('opacity-0', 'translate-y-8');
+    content.classList.remove('opacity-100', 'translate-y-0');
+
+    // Espera a duração da animação (300ms)
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+    }, 300);
+  }
+
+  openBtns.forEach(btn => btn.addEventListener('click', openModal));
+  closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+  // Fecha ao clicar fora do conteúdo
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
+
+  // Fecha com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+})();
 </script>

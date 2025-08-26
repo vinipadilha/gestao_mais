@@ -2,8 +2,12 @@ from main import app
 from flask import render_template
 
 @app.route("/")
-def homepage():
+def login():
     return render_template("login.html")
+
+@app.route("/cadastro")
+def cadastro():
+    return render_template("cadastro.html")
 
 @app.route("/dashboard")
 def dashboard():

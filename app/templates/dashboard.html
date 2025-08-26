@@ -17,7 +17,7 @@
       }
     })();
     </script>
-    
+
   </head>
   <body class="bg-gray-50 dark:bg-gray-900">
     {% include 'sidebar.html' %}
@@ -33,7 +33,7 @@
     <!-- Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Receita Total -->
-      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
         <div class="flex items-center justify-between gap-3">
           <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Receita Total</h3>
           <div class="p-3 bg-green-500 rounded-lg">
@@ -43,7 +43,7 @@
             </svg>
           </div>
         </div>
-        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">R$ 35.000</p>
+        <p class="mt-2 text-2xl font-bold text-green-500 dark:text-green-500 count-up" data-target="42365">0</p>
         <div class="flex items-center justify-between mt-2">
           <p class="text-sm text-gray-600 dark:text-gray-400">Últimos 30 dias</p>
           <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+12.5%</span>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Produtos Cadastrados -->
-      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
         <div class="flex items-center justify-between gap-3">
           <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Produtos Cadastrados</h3>
           <div class="p-3 bg-blue-500 rounded-lg">
@@ -60,7 +60,7 @@
             </svg>
           </div>
         </div>
-        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">1.250</p>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white count-up" data-target="1275">0</p>
         <div class="flex items-center justify-between mt-2">
           <p class="text-sm text-gray-600 dark:text-gray-400">Itens no sistema</p>
           <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+8</span>
@@ -68,7 +68,7 @@
       </div>
 
       <!-- Vendas Hoje -->
-      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
         <div class="flex items-center justify-between gap-3">
           <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Vendas Hoje</h3>
           <div class="p-3 bg-purple-500 rounded-lg">
@@ -78,7 +78,7 @@
             </svg>
           </div>
         </div>
-        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">87</p>
+        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white count-up" data-target="87">0</p>
         <div class="flex items-center justify-between mt-2">
           <p class="text-sm text-gray-600 dark:text-gray-400">Transações realizadas</p>
           <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+23.1%</span>
@@ -86,7 +86,7 @@
       </div>
 
       <!-- Estoque Baixo -->
-      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
         <div class="flex items-center justify-between gap-3">
           <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Estoque Baixo</h3>
           <div class="p-3 bg-yellow-500 rounded-lg">
@@ -95,7 +95,7 @@
             </svg>
           </div>
         </div>
-        <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">32</p>
+        <p class="mt-2 text-2xl font-bold text-yellow-500 dark:text-yellow-500 count-up" data-target="32">0</p>
         <div class="flex items-center justify-between mt-2">
           <p class="text-sm text-gray-600 dark:text-gray-400">Produtos precisam de reposição</p>
           <span class="text-xs font-semibold px-2 py-1 bg-red-100 text-red-600 rounded-full">-5.2%</span>
@@ -193,3 +193,30 @@
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   </body>
 </html>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".count-up");
+
+    counters.forEach(counter => {
+      counter.innerText = "0"; // valor inicial
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText.replace(/\D/g, ""); // remove formatação
+        const increment = target / 100; // velocidade do contador (quanto menor, mais rápido)
+
+        if (current < target) {
+          counter.innerText = formatNumber(Math.ceil(current + increment));
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = formatNumber(target);
+        }
+      };
+
+      const formatNumber = (num) => {
+        return num.toLocaleString("pt-BR"); // deixa no formato 35.000
+      };
+
+      updateCounter();
+    });
+  });
+</script>
