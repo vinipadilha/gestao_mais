@@ -1,6 +1,8 @@
 # 🛒 Gestão+  
 Um sistema completo de **gestão de mercado** com controle de **estoque, vendas, clientes, fornecedores e dashboard interativo**, desenvolvido em **Python (Flask)** e **Tailwind CSS**.  
 
+📚 Este projeto foi desenvolvido para a disciplina de **Design de Software** da **PUCPR**.  
+
 ## 📌 Sobre o Projeto  
 O **Gestão+** foi criado para auxiliar mercados e pequenos comércios a terem maior **organização e controle** sobre suas operações do dia a dia.  
 A ideia é reunir em um único sistema todas as funcionalidades essenciais para o gerenciamento de um negócio, de forma simples, rápida e moderna.  
