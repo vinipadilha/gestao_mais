@@ -28,42 +28,42 @@
   <!-- Cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     <!-- Receita Total -->
-    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
       <div class="flex items-center justify-between gap-3">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total de Produtos</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Valor Total</h3>
         <div class="p-3 bg-green-500 rounded-lg">
           <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M8 17.345a4.76 4.76 0 0 0 2.558 1.618c2.274.589 4.512-.446 4.999-2.31.487-1.866-1.273-3.9-3.546-4.49-2.273-.59-4.034-2.623-3.547-4.488.486-1.865 2.724-2.899 4.998-2.31.982.236 1.87.793 2.538 1.592m-3.879 12.171V21m0-18v2.2" />
           </svg>
         </div>
       </div>
-      <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">152</p>
+      <p class="mt-2 text-2xl font-bold text-green-500 dark:text-green-500 count-up" data-target="1127876" data-currency="true" ">R$ 0</p>
       <div class="flex items-center justify-between mt-2">
-        <p class="text-sm text-gray-600 dark:text-gray-400">Produtos Cadastrados</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Valor do Estoque</p>
+        <!-- <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+12.5%</span> -->
       </div>
     </div>
-
     <!-- Produtos Cadastrados -->
-    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
       <div class="flex items-center justify-between gap-3">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Produtos Cadastrados</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total de Produtos</h3>
         <div class="p-3 bg-blue-500 rounded-lg">
           <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
             <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
           </svg>
         </div>
       </div>
-      <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">1.250</p>
+      <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white count-up" data-target="1275">0</p>
       <div class="flex items-center justify-between mt-2">
-        <p class="text-sm text-gray-600 dark:text-gray-400">Itens no sistema</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Produtos Cadastrados</p>
+        <!-- <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+8</span> -->
       </div>
     </div>
-
     <!-- Vendas Hoje -->
-    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
       <div class="flex items-center justify-between gap-3">
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Vendas Hoje</h3>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Categorias</h3>
         <div class="p-3 bg-purple-500 rounded-lg">
           <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -71,32 +71,246 @@
           </svg>
         </div>
       </div>
-      <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">87</p>
+      <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white count-up" data-target="6">0</p>
       <div class="flex items-center justify-between mt-2">
-        <p class="text-sm text-gray-600 dark:text-gray-400">Transações realizadas</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Categorias Ativas</p>
+        <!-- <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-600 rounded-full">+23.1%</span> -->
       </div>
     </div>
-
     <!-- Estoque Baixo -->
-    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-all duration-300 hover:shadow-lg">
+    <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
       <div class="flex items-center justify-between gap-3">
         <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Estoque Baixo</h3>
         <div class="p-3 bg-yellow-500 rounded-lg">
           <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 15a1.25 1.25 0 1 1 1.25-1.25A1.25 1.25 0 0 1 12 17Zm1-4h-2V7h2Z"/>
+            <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
           </svg>
         </div>
       </div>
-      <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">32</p>
+      <p class="mt-2 text-2xl font-bold text-yellow-500 dark:text-yellow-500 count-up" data-target="32">0</p>
       <div class="flex items-center justify-between mt-2">
         <p class="text-sm text-gray-600 dark:text-gray-400">Produtos precisam de reposição</p>
+        <!-- <span class="text-xs font-semibold px-2 py-1 bg-red-100 text-red-600 rounded-full">-5.2%</span> -->
       </div>
     </div>
   </div>
+  
+  <!-- Listas abaixo dos cards -->
+  <div class="gap-8 mt-8">
+    <!-- Vendas Recentes -->
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">Lista de Produtos</h2>
+    
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white dark:bg-gray-800 rounded-lg">
+        <thead>
+          <tr class="text-left text-gray-600 dark:text-gray-300">
+            <th class="px-4 py-3">Produto</th>
+            <th class="px-4 py-3">Categoria</th>
+            <th class="px-4 py-3">Estoque</th>
+            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3">Preço</th>
+            <th class="px-4 py-3">Fornecedor</th>
+            <th class="px-4 py-3">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+          <!-- Linha 1 -->
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-gray-200 dark:border-gray-700 border-y">
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Arroz Integral 5kg</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Grãos</span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">50</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Min: 10</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Normal
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 25.90</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Custo: R$ 18.50</p>
+            </td>
+            <td class="px-4 py-3 text-gray-800 dark:text-gray-200">Distribuidora ABC</td>
+            <td class="px-4 py-3 flex gap-2">
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-red-500 dark:hover:bg-red-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+                </svg>
+              </button>
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-green-500 dark:hover:bg-green-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Linha 2 -->
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-gray-200 dark:border-gray-700 border-y">
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Feijão Carioca 1kg</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Grãos</span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">120</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Min: 20</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Normal
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 7.90</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Custo: R$ 5.50</p>
+            </td>
+            <td class="px-4 py-3 text-gray-800 dark:text-gray-200">Alimentos Brasil</td>
+            <td class="px-4 py-3 flex gap-2">
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-red-500 dark:hover:bg-red-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+                </svg>
+              </button>
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-green-500 dark:hover:bg-green-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Linha 3 -->
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-gray-200 dark:border-gray-700 border-y">
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Óleo de Soja 900ml</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Óleos</span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">200</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Min: 30</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Normal
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 6.50</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Custo: R$ 4.20</p>
+            </td>
+            <td class="px-4 py-3 text-gray-800 dark:text-gray-200">CerealMix</td>
+            <td class="px-4 py-3 flex gap-2">
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-red-500 dark:hover:bg-red-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+                </svg>
+              </button>
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-green-500 dark:hover:bg-green-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Linha 4 -->
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-gray-200 dark:border-gray-700 border-y">
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Açúcar Refinado 1kg</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Açúcares</span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">80</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Min: 15</p>
+            </td>
+            <td class="px-4 py-3">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Normal
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 4.20</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Custo: R$ 3.00</p>
+            </td>
+            <td class="px-4 py-3 text-gray-800 dark:text-gray-200">Doçura S/A</td>
+            <td class="px-4 py-3 flex gap-2">
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-red-500 dark:hover:bg-red-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+                </svg>
+              </button>
+              <button class="p-2 border-2 cursor-pointer rounded hover:bg-green-500 dark:hover:bg-green-600/40 border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </main>
-
-
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
    
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".count-up");
+
+    counters.forEach(counter => {
+      counter.innerText = "0"; 
+      
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText.replace(/\D/g, "");
+        const increment = target / 150;
+
+        if (current < target) {
+          setValue(Math.ceil(current + increment));
+          requestAnimationFrame(updateCounter);
+        } else {
+          setValue(target);
+        }
+      };
+
+      const setValue = (num) => {
+        const formatted = num.toLocaleString("pt-BR");
+        if (counter.getAttribute("data-currency") === "true") {
+          counter.innerText = "R$ " + formatted;
+        } else {
+          counter.innerText = formatted;
+        }
+      };
+
+      updateCounter();
+    });
+  });
+</script>

@@ -17,7 +17,8 @@
         </div>
         <!-- Botões à direita -->
         <div class="flex items-center gap-3">
-                  
+
+
           <button data-user-modal-open
             class="cursor-pointer flex items-center gap-2 text-sm dark:bg-gray-800 text-white px-3 py-2 rounded-full ring-4 ring-gray-300 focus:ring-gray-500 dark:ring-gray-600">
             <!-- Ícone -->
@@ -157,7 +158,7 @@
              <svg class="shrink-0 w-7 h-7 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"fill="currentColor" viewBox="0 0 24 24">
               <path fill="currentColor" d="M9.98189 4.50602c1.24881-.67469 2.78741-.67469 4.03621 0l3.9638 2.14148c.3634.19632.6862.44109.9612.72273l-6.9288 3.60207L5.20654 7.225c.2403-.22108.51215-.41573.81157-.5775l3.96378-2.14148ZM4.16678 8.84364C4.05757 9.18783 4 9.5493 4 9.91844v4.28296c0 1.3494.7693 2.5963 2.01811 3.2709l3.96378 2.1415c.32051.1732.66011.3019 1.00901.3862v-7.4L4.16678 8.84364ZM13.009 20c.3489-.0843.6886-.213 1.0091-.3862l3.9638-2.1415C19.2307 16.7977 20 15.5508 20 14.2014V9.91844c0-.30001-.038-.59496-.1109-.87967L13.009 12.6155V20Z"/>
             </svg>
-            <span class="ms-3 text-lg">Vendas</span>
+            <span class="ms-3 text-lg">Categorias</span>
           </a>
         </li>
        
@@ -165,56 +166,53 @@
     </div>
   </aside>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-
-
-<!-- Script: transição + abertura/fechamento, sem Flowbite -->
 <script>
-(function () {
-  const modal = document.getElementById('user-modal');
-  const content = document.getElementById('user-modal-content');
-  const openBtns = document.querySelectorAll('[data-user-modal-open]');
-  const closeBtns = document.querySelectorAll('[data-user-modal-close]');
+  (function () {
+    const modal = document.getElementById('user-modal');
+    const content = document.getElementById('user-modal-content');
+    const openBtns = document.querySelectorAll('[data-user-modal-open]');
+    const closeBtns = document.querySelectorAll('[data-user-modal-close]');
 
-  function openModal() {
-    modal.classList.remove('hidden');
-    // Acessibilidade
-    modal.setAttribute('aria-hidden', 'false');
+    function openModal() {
+      modal.classList.remove('hidden');
+      // Acessibilidade
+      modal.setAttribute('aria-hidden', 'false');
 
-    // Próximo frame para permitir transição (display -> opacity)
-    requestAnimationFrame(() => {
-      modal.classList.remove('opacity-0');
-      modal.classList.add('opacity-100');
+      // Próximo frame para permitir transição (display -> opacity)
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
 
-      content.classList.remove('opacity-0', 'translate-y-8');
-      content.classList.add('opacity-100', 'translate-y-0');
+        content.classList.remove('opacity-0', 'translate-y-8');
+        content.classList.add('opacity-100', 'translate-y-0');
+      });
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      modal.classList.remove('opacity-100');
+
+      content.classList.add('opacity-0', 'translate-y-8');
+      content.classList.remove('opacity-100', 'translate-y-0');
+
+      // Espera a duração da animação (300ms)
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+      }, 300);
+    }
+
+    openBtns.forEach(btn => btn.addEventListener('click', openModal));
+    closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+    // Fecha ao clicar fora do conteúdo
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
     });
-  }
 
-  function closeModal() {
-    modal.classList.add('opacity-0');
-    modal.classList.remove('opacity-100');
-
-    content.classList.add('opacity-0', 'translate-y-8');
-    content.classList.remove('opacity-100', 'translate-y-0');
-
-    // Espera a duração da animação (300ms)
-    setTimeout(() => {
-      modal.classList.add('hidden');
-      modal.setAttribute('aria-hidden', 'true');
-    }, 300);
-  }
-
-  openBtns.forEach(btn => btn.addEventListener('click', openModal));
-  closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
-
-  // Fecha ao clicar fora do conteúdo
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  // Fecha com ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-  });
-})();
+    // Fecha com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+  })();
 </script>
