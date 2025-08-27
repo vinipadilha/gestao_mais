@@ -1,114 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
-    {% include 'sidebar.html' %}
+  {% include 'sidebar.html' %}
 
+  <main class="p-10 sm:ml-64 pt-24">
     <div class="mb-8 flex items-center justify-between">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Produtos</h1>
-          <p class="text-lg text-gray-600 dark:text-gray-400">Gerencie seu catálogo de produtos</p>
-        </div>
-
-        <!-- Botão para abrir modal -->
-        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-          class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition-all cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-          </svg>
-          Adicionar Produto
-        </button>
-
-        <!-- Modal -->
-        <div id="crud-modal" tabindex="-1" aria-hidden="true"
-          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen bg-black/60 ">
-          <div class="relative p-4 w-full max-w-2xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-xl shadow-lg dark:bg-gray-800">
-
-              <!-- Modal header -->
-              <div class="flex items-center justify-between p-4 border-b dark:border-gray-600 border-gray-200">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Novo Produto
-                </h3>
-                <button type="button" class="cursor-pointer text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
-                  <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                  </svg>
-                  <span class="sr-only">Fechar</span>
-                </button>
-              </div>
-            
-              <!-- Modal body -->
-              <form class="p-4 space-y-4">
-                <div>
-                  <label for="nome" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Nome *</label>
-                  <input type="text" id="nome" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label for="marca" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Marca *</label>
-                    <input type="text" id="marca" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                  </div>
-                
-                  <div>
-                    <label for="categoria" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Categoria *</label>
-                    <select id="categoria" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                      <option value="">Selecione...</option>
-                      <option value="eletronicos">Eletrônicos</option>
-                      <option value="roupas">Roupas</option>
-                      <option value="alimentos">Alimentos</option>
-                    </select>
-                  </div>
-                </div>
-              
-              
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label for="preco_venda" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Preço Venda</label>
-                    <input type="number" id="preco_venda" step="0.01" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  </div>
-                  <div>
-                    <label for="preco_custo" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Preço Custo</label>
-                    <input type="number" id="preco_custo" step="0.01" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  </div>
-                </div>
-              
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label for="estoque_atual" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Estoque Atual</label>
-                    <input type="number" id="estoque_atual" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  </div>
-                  <div>
-                    <label for="estoque_minimo" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Estoque Mínimo</label>
-                    <input type="number" id="estoque_minimo" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  </div>
-                </div>
-              
-                <div>
-                  <label for="descricao" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Descrição</label>
-                  <textarea id="descricao" rows="3" class="min-h-[80px] outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
-                </div>
-              
-                <button type="submit" class="w-full flex items-center justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
-                  </svg>
-                  Salvar Produto
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
+      <div>
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Clientes</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Gerencie seus clientes</p>
       </div>
+
+      <!-- Botão para abrir modal -->
+      <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition-all cursor-pointer">
+        <i class="fa-solid fa-user-plus"></i> Adicionar Pessoa
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div id="crud-modal" tabindex="-1" aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen bg-black/60">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-xl shadow-lg dark:bg-gray-800">
+          
+          <!-- Cabeçalho -->
+          <div class="flex items-center justify-between p-4 border-b dark:border-gray-600 border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Novo Cliente</h3>
+            <button type="button" data-modal-toggle="crud-modal"
+              class="cursor-pointer text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg w-8 h-8 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Corpo do formulário -->
+          <form class="p-4 space-y-4">
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="nome_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Nome Completo</label>
+                <input type="text" id="nome_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+              
+              <div>
+                <label for="cpf_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">CPF</label>
+                <input type="text" placeholder="000.000.000-00" id="cpf_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="email_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                <input type="email" placeholder="exemplo@email.com" id="email_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+              
+              <div>
+                <label for="telefone_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Telefone</label>
+                <input type="text" placeholder="(00) 99999-9999" id="telefone_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+            </div>
+
+            <div>
+              <label for="endereco_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Endereço</label>
+              <input type="text" id="endereco_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <label for="cidade_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Cidade</label>
+                <input type="text" id="cidade_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+              
+              <div>
+                <label for="estado_cliente" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Estado</label>
+                <input type="text" id="estado_cliente" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+
+              <div>
+                <label for="cep" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">CEP</label>
+                <input type="text" id="cep" placeholder="00000-000" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required> 
+              </div>
+
+            </div>
+
+            <button type="submit" class="w-full flex items-center justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                </svg>
+                  Adicionar cliente
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow flex flex-col transition-transform duration-300 hover:scale-103 hover:shadow-lg">
+      <div class="flex items-center justify-between gap-3">
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total de Clientes</h3>
+        <div class="p-3 bg-blue-500 rounded-lg">
+            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm16 0a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM6 11.5c-2.5 0-5 1.25-5 3.75V19h10v-3.75c0-2.5-2.5-3.75-5-3.75Zm16 0c-2.5 0-5 1.25-5 3.75V19h10v-3.75c0-2.5-2.5-3.75-5-3.75ZM14 10a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm0 2c-2.5 0-5 1.25-5 3.75V19h10v-3.25c0-2.5-2.5-3.75-5-3.75Z"/>
+            </svg>
+        </div>
+      </div>
+      <p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white count-up" data-target="1275">20</p>
+      <div class="flex items-center justify-between mt-2">
+        <p class="text-sm text-gray-600 dark:text-gray-400">Clientes</p>
+      </div>
+
+    </div>
+    </div>
+    <div class="gap-8 mt-8">
+        
+    <!-- Vendas Recentes -->
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow">
+        <div class="flex items-center w-full max-w-2xl relative">
+              <svg class="w-5 h-5 text-gray-400 absolute left-3" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
+              </svg>
+              <input type="text" placeholder="Buscar por nome, email ou CPF"
+                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"/>
+            </div>
+            <br>
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">Lista de Clientes</h2>
+    
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white dark:bg-gray-800 rounded-lg">
+        <thead>
+          <tr class="text-left text-gray-600 dark:text-gray-300">
+            <th class="px-4 py-3">Nome</th>
+            <th class="px-4 py-3">Email</th>
+            <th class="px-4 py-3">Estado</th>
+            <th class="px-4 py-3">Cidade</th>
+            <th class="px-4 py-3">CPF</th>
+            <th class="px-4 py-3">Total de Compras</th>
+            <th class="px-4 py-3">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                <!-- Linha 1 -->
+                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
+                  <td class="px-4 py-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">Arthur Ambrozewicz Cidral</p>
+                  </td>
+                  <td class="px-4 py-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">arthuim@gmail.com</p>
+
+                    </span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">Paraná</p>
+                  </td>
+                  <td class="px-4 py-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">Curitiba</p>
+                  </td>
+                  <td class="px-4 py-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">07453893974</p>
+                  </td>
+                  <td class="px-4 py-3 text-gray-800 dark:text-gray-200">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 25.90</p>
+                  </td>
+                  <td class="px-4 py-3 flex gap-2">
+                    <!-- Editar -->
+                    <button class="p-2 rounded-lg hover:bg-blue-500/20 cursor-pointer">
+                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                      </svg>
+                    
+                    </button>
+                    <!-- Deletar -->
+                    <button class="p-2 rounded-lg hover:bg-red-500/20 cursor-pointer delete-btn" data-product-id="37">
+                      <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                      </svg>
+                    </button>
+
+                  </td>
+                </tr>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
 </html>
