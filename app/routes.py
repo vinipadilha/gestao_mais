@@ -21,3 +21,7 @@ def estoque():
 def produtos():
     return render_template("produtos.html")
 
+@app.route("/clientes")
+def clientes():
+    return render_template("clientes.html")
+
