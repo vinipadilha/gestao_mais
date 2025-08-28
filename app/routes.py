@@ -25,3 +25,23 @@ def produtos():
 def clientes():
     return render_template("clientes.html")
 
+@app.route("/fornecedores")
+def fornecedores():
+    return render_template("fornecedores.html")
+
+@app.route("/categorias")
+def categorias():
+    return render_template("categorias.html")
+
+@app.route("/formaspagamento")
+def formaspagamento():
+    return render_template("formaspagamento.html")
+
+@app.route("/vendas")
+def vendas():
+    return render_template("vendas.html")
+    
+@app.route("/caixa")
+def caixa():
+    return render_template("caixa.html")
+

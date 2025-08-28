@@ -24,11 +24,11 @@
               <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
               </svg>
-              <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+              <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Você tem certeza que deseja deletar esse produto?</h3>
               <button id="confirm-delete" type="button" class="cursor-pointer text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                Yes, I'm sure
+                Sim, tenho certeza!
               </button>
-              <button data-modal-hide="popup-modal" type="button" class="cursor-pointer py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancel</button>
+              <button data-modal-hide="popup-modal" type="button" class="cursor-pointer py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Não!</button>
             </div>
           </div>
         </div>
@@ -41,8 +41,7 @@
         </div>
 
         <!-- Botão para abrir modal -->
-        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-          class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition-all cursor-pointer">
+        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition-all cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
           </svg>
@@ -74,13 +73,13 @@
               <form class="p-4 space-y-4">
                 <div>
                   <label for="nome" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Nome *</label>
-                  <input type="text" id="nome" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                  <input type="text" id="nome" placeholder="Nome do produto" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                   <div>
                     <label for="marca" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Marca *</label>
-                    <input type="text" id="marca" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                    <input type="text" id="marca" placeholder="Marca do produto" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                   </div>
                 
                   <div>
@@ -93,35 +92,34 @@
                     </select>
                   </div>
                 </div>
-              
-              
+
                 <div class="grid grid-cols-2 gap-4">
                   <div>
                     <label for="preco_venda" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Preço Venda</label>
-                    <input type="number" id="preco_venda" step="0.01" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <input type="number" id="preco_venda" step="0.01" placeholder="Preço de venda" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   </div>
                   <div>
                     <label for="preco_custo" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Preço Custo</label>
-                    <input type="number" id="preco_custo" step="0.01" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <input type="number" id="preco_custo" step="0.01" placeholder="Preço de custo" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   </div>
                 </div>
-              
+
                 <div class="grid grid-cols-2 gap-4">
                   <div>
                     <label for="estoque_atual" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Estoque Atual</label>
-                    <input type="number" id="estoque_atual" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <input type="number" id="estoque_atual" placeholder="Quantidade em estoque" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   </div>
                   <div>
                     <label for="estoque_minimo" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Estoque Mínimo</label>
-                    <input type="number" id="estoque_minimo" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <input type="number" id="estoque_minimo" placeholder="Estoque mínimo" class="outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   </div>
                 </div>
-              
+
                 <div>
                   <label for="descricao" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Descrição</label>
-                  <textarea id="descricao" rows="3" class="min-h-[80px] outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                  <textarea id="descricao" rows="3" placeholder="Descrição do produto" class="min-h-[80px] outline-none focus:border-2 focus:border-blue-500 w-full p-2.5 rounded-lg border border-gray-300 text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
                 </div>
-              
+
                 <button type="submit" class="w-full flex items-center justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
@@ -195,14 +193,7 @@
                     <p class="font-semibold text-gray-800 dark:text-gray-200">União</p>
                   </td>
                   <td class="px-4 py-3">
-                    <span
-                      class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
-                      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      Normal
-                    </span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Normal</span>
                   </td>
                   <td class="px-4 py-3">
                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 18.50</p>
@@ -211,20 +202,16 @@
                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 25.90</p>
                   </td>
                   <td class="px-4 py-3 flex gap-2">
-                    <!-- Editar -->
-                    <button class="p-2 rounded-lg hover:bg-blue-500/20 cursor-pointer">
-                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                      </svg>
-                    
-                    </button>
-                    <!-- Deletar -->
-                    <button class="p-2 rounded-lg hover:bg-red-500/20 cursor-pointer delete-btn" data-product-id="37">
-                      <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                       </svg>
                     </button>
-
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
@@ -240,13 +227,7 @@
                     <p class="font-semibold text-gray-800 dark:text-gray-200">Vigor</p>
                   </td>
                   <td class="px-4 py-3">
-                    <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-yellow-500 rounded-full">
-                      <span class="flex items-center text-text-900 font-medium">
-                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l6.518 11.59c.75 1.335-.213 3.01-1.742 3.01H3.48c-1.53 0-2.492-1.675-1.742-3.01l6.518-11.59zM11 14a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V7a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                        </svg>
-                        Em Falta
-                      </span>
+                      <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Em Falta</span>
                   </td>
                   <td class="px-4 py-3">
                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 18.50</p>
@@ -255,21 +236,146 @@
                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 25.90</p>
                   </td>
                   <td class="px-4 py-3 flex gap-2">
-                    <!-- Editar -->
-                    <button class="p-2 rounded-lg hover:bg-blue-500/20 cursor-pointer">
-                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                       </svg>
-                    
                     </button>
-                    <!-- Deletar -->
-                    <button class="p-2 rounded-lg hover:bg-red-500/20 cursor-pointer delete-btn" data-product-id="37">
-                      <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                       </svg>
                     </button>
                   </td>
                 </tr>
+                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Feijão Preto 1kg</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Grãos</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Kicaldo</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Normal</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 7.00</p>
+                   </td>
+                   <td class="px-4 py-3 text-gray-800 dark:text-gray-200">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 8.50</p>
+                   </td>
+                   <td class="px-4 py-3 flex gap-2">
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      </svg>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
+                   </td>
+                 </tr>
+                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Óleo de Soja 900ml</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Óleos</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Liza</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Normal</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 5.00</p>
+                   </td>
+                   <td class="px-4 py-3 text-gray-800 dark:text-gray-200">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 6.90</p>
+                   </td>
+                   <td class="px-4 py-3 flex gap-2">
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      </svg>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
+                   </td>
+                 </tr>
+                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Açúcar Cristal 1kg</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Açúcar</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">União</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Normal</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 3.50</p>
+                   </td>
+                   <td class="px-4 py-3 text-gray-800 dark:text-gray-200">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 4.20</p>
+                   </td>
+                   <td class="px-4 py-3 flex gap-2">
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      </svg>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
+                   </td>
+                 </tr>
+                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700/50 border-y border-gray-200 dark:border-gray-700">
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Farinha de Trigo 1kg</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-full">Farinhas</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">Dona Benta</p>
+                   </td>
+                   <td class="px-4 py-3">
+                     <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Normal</span>
+                   </td>
+                   <td class="px-4 py-3">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 2.80</p>
+                   </td>
+                   <td class="px-4 py-3 text-gray-800 dark:text-gray-200">
+                     <p class="font-semibold text-gray-800 dark:text-gray-200">R$ 3.80</p>
+                   </td>
+                   <td class="px-4 py-3 flex gap-2">
+                    <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      </svg>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 cursor-pointer" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
+                   </td>
+                 </tr>
               </tbody>
             </table>
           </div>
@@ -281,30 +387,3 @@
   </body>
 </html>
 
-<script>
-  const deleteButtons = document.querySelectorAll('.delete-btn');
-  const popupModal = document.getElementById('popup-modal');
-  let productIdToDelete = null;
-
-  deleteButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      productIdToDelete = btn.dataset.productId;
-      popupModal.classList.remove('hidden');
-    });
-  });
-
-  document.querySelectorAll('[data-modal-hide]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      popupModal.classList.add('hidden');
-      productIdToDelete = null;
-    });
-  });
-
-  document.getElementById('confirm-delete').addEventListener('click', () => {
-    if(productIdToDelete) {
-      console.log('Deletar produto com ID:', productIdToDelete);
-      popupModal.classList.add('hidden');
-    }
-  });
-
-</script>

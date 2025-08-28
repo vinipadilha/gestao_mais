@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "build:css": "npx @tailwindcss/cli -i ./app/static/css/tailwind/input.css -o ./app/static/css/tailwind/output.css",
-    "dev:css": "npx @tailwindcss/cli -i ./app/static/css/tailwind/input.css -o ./app/static/css/tailwind/output.css --watch",
-    "build": "tailwindcss -i ./app/static/css/tailwind/input.css -o ./app/static/css/output.css --watch"
+    "dev:css": "npx @tailwindcss/cli -i ./app/static/css/tailwind/input.css -o ./app/static/css/tailwind/output.css --watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.12",
