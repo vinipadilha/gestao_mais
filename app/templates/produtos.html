@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestão+</title>
-    <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
-  </head>
-  <body class="bg-gray-50 dark:bg-gray-900">
-    
-    {% include 'sidebar.html' %}
+{% extends "commom/base.html" %}
 
-    <main class="p-10 sm:ml-64 pt-24">
+{% block title %}Produtos - Gestão+{% endblock %}
+
+{% block content %}
       <!-- Modal de Confirmação de Delete -->
       <div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full h-screen bg-black/50">
         <div class="relative p-4 w-full max-w-md max-h-full">
@@ -381,9 +373,9 @@
           </div>
         </div>
       </div>
-    </main>
+{% endblock %}
+
+{% block extra_scripts %}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-   
-  </body>
-</html>
+{% endblock %}
 
