@@ -25,17 +25,17 @@ def produtos():
 def clientes():
     return render_template("clientes.html")
 
-@app.route("/fornecedores")
+@app.route("/cadastros/fornecedores")
 def fornecedores():
-    return render_template("fornecedores.html")
+    return render_template("/cadastros/fornecedores.html")
 
-@app.route("/categorias")
+@app.route("/cadastros/categorias")
 def categorias():
-    return render_template("categorias.html")
+    return render_template("/cadastros/categorias.html")
 
-@app.route("/formaspagamento")
+@app.route("/cadastros/formaspagamento")
 def formaspagamento():
-    return render_template("formaspagamento.html")
+    return render_template("/cadastros/formaspagamento.html")
 
 @app.route("/vendas")
 def vendas():
