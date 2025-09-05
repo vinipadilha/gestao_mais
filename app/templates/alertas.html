@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alertas de Estoque - Gestão+</title>
-    <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
-  </head>
-  <body class="bg-gray-50 dark:bg-gray-900">
-    {% include 'sidebar.html' %}
+{% extends "commom/base.html" %}
 
-    <!-- Conteúdo principal -->
-    <main class="p-10 sm:ml-64 pt-24">
+{% block title %}Alertas de Estoque - Gestão+{% endblock %}
+
+{% block content %}
       <!-- Título da página -->
       <div class="mb-8">
         <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Alertas de Estoque</h1>
@@ -277,8 +269,4 @@
           </div>
         </div>
       </div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-  </body>
-</html>
+{% endblock %}
