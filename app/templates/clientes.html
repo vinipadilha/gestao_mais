@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "commom/base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
+{% block title %}Clientes - Gestão+{% endblock %}
+
+{% block extra_head %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+{% endblock %}
 
-<body class="bg-gray-50 dark:bg-gray-900">
-  {% include 'sidebar.html' %}
-
-  <main class="p-10 sm:ml-64 pt-24">
+{% block content %}
     <!-- Cabeçalho e botão -->
     <div class="mb-8 flex items-center justify-between">
       <div>
@@ -257,9 +251,8 @@
         </div>
       </div>
     </div>
-  </main>
+{% endblock %}
 
+{% block extra_scripts %}
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-</body>
-
-</html>
+{% endblock %}
