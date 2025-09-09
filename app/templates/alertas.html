@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alertas de Estoque - Gestão+</title>
+    <link href="{{ url_for('static', filename='css/tailwind/output.css') }}" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900">
+    {% include 'sidebar.html' %}
+
+    <!-- Conteúdo principal -->
+    <main class="p-10 sm:ml-64 pt-24">
+      <!-- Título da página -->
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Alertas de Estoque</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Monitoramento de produtos com estoque baixo ou em falta</p>
+      </div>
+
+      <!-- Grid com as 3 listas de alertas -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Lista Vermelha - Itens Faltando -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-red-500 rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-red-600 dark:text-red-400">Itens em Falta</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Produtos com estoque zerado</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <!-- Item em falta 1 -->
+            <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/30 border-2 border-red-200 dark:border-red-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Açúcar Cristal 1kg</span>
+                <span class="text-red-500 dark:text-red-400 font-bold">0 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-200 border border-red-300 dark:border-red-600">Açúcares</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 20</span>
+                </div>
+                <div>
+                  <span class="text-sm text-red-600 dark:text-red-400 font-semibold">URGENTE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item em falta 2 -->
+            <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/30 border-2 border-red-200 dark:border-red-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Óleo de Soja 900ml</span>
+                <span class="text-red-500 dark:text-red-400 font-bold">0 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-200 border border-red-300 dark:border-red-600">Óleos</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 15</span>
+                </div>
+                <div>
+                  <span class="text-sm text-red-600 dark:text-red-400 font-semibold">URGENTE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item em falta 3 -->
+            <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/30 border-2 border-red-200 dark:border-red-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Café Torrado 500g</span>
+                <span class="text-red-500 dark:text-red-400 font-bold">0 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-200 border border-red-300 dark:border-red-600">Bebidas</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 25</span>
+                </div>
+                <div>
+                  <span class="text-sm text-red-600 dark:text-red-400 font-semibold">URGENTE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista Amarela - Itens Quase Acabando -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-yellow-500 rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-yellow-600 dark:text-yellow-400">Estoque Baixo</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Produtos próximos do limite mínimo</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <!-- Item estoque baixo 1 -->
+            <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-200 dark:border-yellow-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Leite Integral 1L</span>
+                <span class="text-yellow-600 dark:text-yellow-400 font-bold">5 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 border border-yellow-300 dark:border-yellow-600">Laticínios</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 10</span>
+                </div>
+                <div>
+                  <span class="text-sm text-yellow-600 dark:text-yellow-400 font-semibold">Repor 5</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque baixo 2 -->
+            <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-200 dark:border-yellow-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Pão de Forma Integral</span>
+                <span class="text-yellow-600 dark:text-yellow-400 font-bold">3 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 border border-yellow-300 dark:border-yellow-600">Padaria</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 15</span>
+                </div>
+                <div>
+                  <span class="text-sm text-yellow-600 dark:text-yellow-400 font-semibold">Repor 12</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque baixo 3 -->
+            <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-200 dark:border-yellow-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Arroz Branco 5kg</span>
+                <span class="text-yellow-600 dark:text-yellow-400 font-bold">8 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 border border-yellow-300 dark:border-yellow-600">Cereais</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 20</span>
+                </div>
+                <div>
+                  <span class="text-sm text-yellow-600 dark:text-yellow-400 font-semibold">Repor 12</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque baixo 4 -->
+            <div class="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-200 dark:border-yellow-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Macarrão Espaguete 500g</span>
+                <span class="text-yellow-600 dark:text-yellow-400 font-bold">6 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 border border-yellow-300 dark:border-yellow-600">Massas</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 25</span>
+                </div>
+                <div>
+                  <span class="text-sm text-yellow-600 dark:text-yellow-400 font-semibold">Repor 19</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista Verde - Itens com Estoque Adequado -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-green-500 rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-green-600 dark:text-green-400">Estoque OK</h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Produtos com estoque adequado</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <!-- Item estoque OK 1 -->
+            <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border-2 border-green-200 dark:border-green-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Feijão Preto 1kg</span>
+                <span class="text-green-600 dark:text-green-400 font-bold">45 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200 border border-green-300 dark:border-green-600">Leguminosas</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 30</span>
+                </div>
+                <div>
+                  <span class="text-sm text-green-600 dark:text-green-400 font-semibold">OK</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque OK 2 -->
+            <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border-2 border-green-200 dark:border-green-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Açúcar Refinado 1kg</span>
+                <span class="text-green-600 dark:text-green-400 font-bold">32 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200 border border-green-300 dark:border-green-600">Açúcares</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 20</span>
+                </div>
+                <div>
+                  <span class="text-sm text-green-600 dark:text-green-400 font-semibold">OK</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque OK 3 -->
+            <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border-2 border-green-200 dark:border-green-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Óleo de Girassol 900ml</span>
+                <span class="text-green-600 dark:text-green-400 font-bold">28 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200 border border-green-300 dark:border-green-600">Óleos</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 15</span>
+                </div>
+                <div>
+                  <span class="text-sm text-green-600 dark:text-green-400 font-semibold">OK</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item estoque OK 4 -->
+            <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border-2 border-green-200 dark:border-green-700">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Sal Refinado 1kg</span>
+                <span class="text-green-600 dark:text-green-400 font-bold">18 unidades</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 text-sm rounded-2xl bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200 border border-green-300 dark:border-green-600">Temperos</span>
+                  <span class="text-sm text-gray-500 dark:text-gray-300">Mínimo: 10</span>
+                </div>
+                <div>
+                  <span class="text-sm text-green-600 dark:text-green-400 font-semibold">OK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumo dos alertas -->
+      <div class="mt-8 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">Resumo dos Alertas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-4 rounded-xl bg-red-50 dark:bg-red-900/30 border-2 border-red-200 dark:border-red-700">
+            <div class="text-3xl font-bold text-red-600 dark:text-red-400">3</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Itens em Falta</div>
+          </div>
+          <div class="text-center p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 border-2 border-yellow-200 dark:border-yellow-700">
+            <div class="text-3xl font-bold text-yellow-600 dark:text-yellow-400">4</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Estoque Baixo</div>
+          </div>
+          <div class="text-center p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border-2 border-green-200 dark:border-green-700">
+            <div class="text-3xl font-bold text-green-600 dark:text-green-400">4</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Estoque OK</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

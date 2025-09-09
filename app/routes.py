@@ -45,3 +45,7 @@ def vendas():
 def caixa():
     return render_template("caixa.html")
 
+@app.route("/alertas")
+def alertas():
+    return render_template("alertas.html")
+
